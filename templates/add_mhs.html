@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center">Masukkan Data Diri Anda</h1>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-12 mx-auto form shadow-lg p-3 mb-5 bg-white rounded">
+            <form action="{{url_for('tambah_mhs')}}" method="POST">
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" class="form-control" id="nama" name="nama" required>
+                </div>
+                <div class="form-group">
+                    <label for="nim">NIM</label>
+                    <input type="text" class="form-control" id="nim" name="nim" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="jurusan">Jurusan</label>
+                    <input type="text" class="form-control" id="jurusan" name="jurusan" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Tambah Mahasiswa</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}
