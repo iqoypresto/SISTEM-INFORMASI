@@ -143,7 +143,7 @@ def register():
 
         data["password"] = generate_password_hash(request.form["password"], 'sha256')
 
-        send_wa(f"Selamat Datang! {data['namalengkap']} Akun anda telah dibuat", "data=['nohp']")
+        send_wa(f"Selamat Datang! *{data['namalengkap']}* Akun anda telah dibuat", data['nohp'])
         db.collection('users').document().set(data)
         flash ("Berhasil Register, silahkan Login", "success")
         return redirect(url_for('login'))
