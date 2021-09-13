@@ -12,7 +12,7 @@
         -webkit-transition: width 0.4s ease-in-out;
         transition: width 0.4s ease-in-out;
     }
-
+    
     #myInput:focus {
         width: 100%;
     }
@@ -42,7 +42,7 @@
 <h1 class="text-center">Mahasiswa</h1>
 <hr>
 <div class="clearfix">
-    <h3 class="float-left">List Mahasiswa</h3>
+   
     
     <form>
         <a class="float-right" href="{{url_for('tambah_mhs')}}"><button type="button" class="btn btn-danger">Tambah Mahasiswa disini</button></a>
@@ -50,28 +50,30 @@
 </div>
 
 <input type="text" id=myInput onkeyup="myFunction()" placeholder="Cari Nama..." class="cari_nama my-2">
-<table id="myTable">
-    <tr class="bg-info">
-        <th>NAMA</th>
-        <th>NIM</th>
-        <th>EMAIL</th>
-        <th>JURUSAN</th>
-        <th>AKSI</th>
-    </tr>
-    {% for m in mb %}
-    <tr>
-        <td class="py-1" ><span style="text-transform:uppercase">{{m["nama"]}}</span></td>
-        <td class="py-1" >{{m["nim"]}}</td>
-        <td class="py-1" >{{m["email"]}}</td>
-        <td class="py-1" >{{m["jurusan"]}}</td>
-        <td>
-            <a href="/mahasiswa/ubah/{{m.id}}">Ubah</a>
-            <a href="/mahasiswa/lihat/{{m.id}}">Lihat</a>
-            <a href ="/mahasiswa/hapus/{{m.id}}" onclick="return confirm('Data yang sudah dihapus tidak bisa dikembalikan. Yakin?')">Hapus</a>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="table-responsive">
+    <table id="myTable">
+        <tr class="bg-info">
+            <th>NAMA</th>
+            <th>NIM</th>
+            <th>EMAIL</th>
+            <th>JURUSAN</th>
+            <th>AKSI</th>
+        </tr>
+        {% for m in mb %}
+        <tr>
+            <td class="py-1" ><span style="text-transform:uppercase">{{m["nama"]}}</span></td>
+            <td class="py-1" >{{m["nim"]}}</td>
+            <td class="py-1" >{{m["email"]}}</td>
+            <td class="py-1" >{{m["jurusan"]}}</td>
+            <td>
+                <a href="/mahasiswa/ubah/{{m.id}}">Ubah</a>
+                <a href="/mahasiswa/lihat/{{m.id}}">Lihat</a>
+                <a href ="/mahasiswa/hapus/{{m.id}}" onclick="return confirm('Data yang sudah dihapus tidak bisa dikembalikan. Yakin?')">Hapus</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 <br>
 
 <script>
