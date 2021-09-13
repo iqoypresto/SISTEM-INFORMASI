@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .container {
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+</style>
+<h1 class="text-center">Selamat datang di Website Kami, <span style="text-transform: uppercase;">{{ session['user']['namalengkap'] }}</span>!</h1>
+<hr>
+{% endblock %}
